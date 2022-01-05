@@ -1,0 +1,45 @@
+{
+	"$schema": "http://iot.bzh/download/public/schema/json/signal-composer-schema.json",
+	"metadata": {
+		"uid": "@PROJECT_NAME@",
+		"version": "@PROJECT_VERSION@",
+		"api": "@API_NAME@",
+		"info": "@PROJECT_DESCRIPTION@"
+	},
+	"plugins": {
+		"uid":"@PROJECT_NAME@-plugin",
+		"info":"@PROJECT_DESCRIPTION@",
+		"libs":"@PROJECT_NAME@.ctlso"
+	},
+	"sources": [
+        {
+            "uid":"modbus-binding-ana",
+            "api":"modbus",
+            "getSignals": {
+                "action": "api://modbus#1510SP/ana",
+                "args": {"action": "SUBSCRIBE"}
+            }
+        },
+        {
+            "uid":"modbus-binding-dig",
+            "api":"modbus",
+            "getSignals": {
+                "action": "api://modbus#1510SP/dig",
+                "args": {"action": "SUBSCRIBE"}
+            }
+        }
+	],
+	"signals": [
+		{
+			"uid":"ANA",
+			"event": "modbus/ana",
+			"unit": "m/s",
+			"onReceived": {"action":"plugin://redis-plugin#pushData"}
+		},
+		{
+			"uid":"DIG",
+			"event": "modbus/dig",
+			"onReceived": {"action":"plugin://redis-plugin#pushData"}
+		}
+	]
+}
