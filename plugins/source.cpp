@@ -81,7 +81,7 @@ extern "C"
         // Create the json to send to redis
         ret = wrap_json_pack(&data_json, "{ss so ss}"
                         , "class", signal_id
-                        , "data", data_json
+                        , "data", eventJ
                         , "timestamp", "*");
         if (ret < 0) {
             AFB_ERROR("[%s] Failed to wrap data for redis. Event json: %s", __func__, json_object_get_string(eventJ));

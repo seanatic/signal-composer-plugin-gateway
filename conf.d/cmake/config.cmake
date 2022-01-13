@@ -33,7 +33,7 @@ set(PROJECT_AUTHOR_MAIL "valentin.lefebvre@iot.bzh")
 set(PROJECT_LICENSE "APL2.0")
 set(PROJECT_LANGUAGES "CXX")
 set(PLUGIN_SUFFIX ".ctlso")
-set(DEMO_SENSOR "WIRED_WIND_WS310")
+set(DEMO_SENSOR "SIEMENS_ET200SP")
 
 # Where are stored default templates files from submodule or subtree app-templates in your project tree
 # relative to the root project directory
