@@ -7,7 +7,7 @@
 		"info": "@PROJECT_DESCRIPTION@"
 	},
 	"plugins": {
-		"uid":"@PROJECT_NAME@-plugin",
+		"uid":"@PROJECT_NAME@",
 		"info":"@PROJECT_DESCRIPTION@",
 		"libs":"@PROJECT_NAME@.ctlso"
 	},
@@ -34,12 +34,12 @@
 			"uid":"ANA",
 			"event": "modbus/ana",
 			"unit": "m/s",
-			"onReceived": {"action":"plugin://redis-plugin#pushData"}
+			"onReceived": {"action":"plugin://@PROJECT_NAME@#catch_event_cb"}
 		},
 		{
 			"uid":"DIG",
 			"event": "modbus/dig",
-			"onReceived": {"action":"plugin://redis-plugin#pushData"}
+			"onReceived": {"action":"plugin://@PROJECT_NAME@#catch_event_cb"}
 		}
 	]
 }

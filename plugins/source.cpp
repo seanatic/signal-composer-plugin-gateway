@@ -58,7 +58,7 @@ extern "C"
      * @param api       the api
      */
     static void _response_cb(void *closure, json_object *object, const char *error, const char *info, afb_api_t api) {
-        if (!error) {
+        if (error) {
             AFB_API_ERROR(afbBindingRoot, "An error occurred when sending data to redis-tsdb-binding: %s", error);
             return;
         }
@@ -87,6 +87,7 @@ extern "C"
             AFB_ERROR("[%s] Failed to wrap data for redis. Event json: %s", __func__, json_object_get_string(eventJ));
             return;
         }
+        eventJ = json_object_get(eventJ);
 
         // Call insert verb of redis API
         afb_api_call(afbBindingRoot, DTB_API, DTB_INSERT, data_json, _response_cb, NULL);     
@@ -118,5 +119,4 @@ extern "C"
 
         return 0;
     }
-
 }
