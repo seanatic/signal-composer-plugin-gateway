@@ -3,8 +3,12 @@
 	"metadata": {
 		"uid": "@PROJECT_NAME@",
 		"version": "@PROJECT_VERSION@",
-		"api": "@API_NAME@",
-		"info": "@PROJECT_DESCRIPTION@"
+		"api": "signal-composer",
+		"info": "@PROJECT_DESCRIPTION@",
+		"require": [
+			"modbus",
+			"redis"
+		]
 	},
 	"plugins": {
 		"uid":"@PROJECT_NAME@",
@@ -15,6 +19,7 @@
         {
             "uid":"modbus-binding-ana",
             "api":"modbus",
+			"info":"service which catch analogic data from automate through modbus connection",
             "getSignals": {
                 "action": "api://modbus#1510SP/ana",
                 "args": {"action": "SUBSCRIBE"}
@@ -23,6 +28,7 @@
         {
             "uid":"modbus-binding-dig",
             "api":"modbus",
+			"info":"service which catch digital data from automate through modbus connection",
             "getSignals": {
                 "action": "api://modbus#1510SP/dig",
                 "args": {"action": "SUBSCRIBE"}
