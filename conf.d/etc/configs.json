@@ -37,13 +37,13 @@
 	],
 	"signals": [
 		{
-			"uid":"ANA",
+			"uid":"ET200SP_ANA",
 			"event": "modbus/ana",
 			"unit": "m/s",
 			"onReceived": {"action":"plugin://@PROJECT_NAME@#catch_event_cb"}
 		},
 		{
-			"uid":"DIG",
+			"uid":"ET200SP_DIG",
 			"event": "modbus/dig",
 			"onReceived": {"action":"plugin://@PROJECT_NAME@#catch_event_cb"}
 		}
