@@ -6,7 +6,7 @@ The signal composer plugin needs the signal-composer-binding to work.
 dnf install signal-composer-binding
 ```
 
-This plugin subscribe to modbus event and get data to redis database. Si it requires 2 mores services:
+This plugin subscribes to modbus event and send data to redis database. It requires 2 more services:
 
 * modbus-binding
 * redis-tsdb-binding
@@ -19,7 +19,7 @@ dnf install modbus-binding redis-tsdb-binding
 
 ![project schema](./docs/img/project_schema.png)
 
-This plugin is a part of the seanatic gateway project. Allow storing data from *modbus-binding* to redis database thanks *redis-tsdb-binding*
+This plugin is a part of the seanatic gateway project. Allowing to store data from *modbus-binding* to redis database thanks to *redis-tsdb-binding*
 
 ## II - Installation guide
 
@@ -45,7 +45,7 @@ dnf install signal-composer-plugin-seanatic-gateway
   json-c afb-binding afb-libhelpers afb-libcontroller signal-composer-binding
   ```
 
-> **Fedora/OenSuse**
+> **Fedora/OpenSuse**
 >
 > ```bash
 > dnf install gcc-c++ make cmake afb-cmake-modules json-c-devel afb-binding-devel afb-libhelpers-devel afb-libcontroller-devel signal-composer-binding-devel
